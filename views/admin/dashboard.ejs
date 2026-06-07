@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<section class="admin-panel">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>Admin Panel</h2>
+
+        <ul>
+
+         <li><a href="/admin">Dashboard</a></li>
+
+            <li><a href="/admin/products">Products</a></li>
+
+            <li><a href="/admin/orders">Orders</a></li>
+
+            <li><a href="/admin/users">Users </a></li>
+
+            <li> <a href="/logout">Logout</a></li>
+
+        </ul>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="admin-content">
+
+        <h1>Dashboard</h1>
+
+        <!-- CARDS -->
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+              <h2><%= totalProducts %></h2>
+                <p>Total Products</p>
+            </div>
+
+            <div class="dashboard-card">
+           <h2><%= totalOrders %></h2>
+                <p>Total Orders</p>
+            </div>
+
+            <div class="dashboard-card">
+              <h2><%= totalUsers %></h2>
+                <p>Users</p>
+            </div>
+
+        </div>
+
+        <!-- PRODUCTS TABLE -->
+
+        <div class="products-table">
+
+            <div class="table-header">
+
+                <h2>Recent Products</h2>
+
+              <a href="/admin/add-product">
+    <button>Add Product</button>
+</a>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <tbody>
+
+<% products.forEach(product => { %>
+
+<tr>
+
+    <td>
+
+        <img
+        src="/uploads/<%= product.image %>"
+        width="70"
+        alt="">
+
+    </td>
+
+    <td>
+        <%= product.name %>
+    </td>
+
+    <td>
+        ₹<%= product.price %>
+    </td>
+<td>
+
+    <a href="/products/edit/<%= product._id %>">
+
+        <button class="edit-btn">
+
+            Edit
+
+        </button>
+
+    </a>
+
+    <a href="/products/delete/<%= product._id %>">
+
+        <button class="delete-btn">
+
+            Delete
+
+        </button>
+
+    </a>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+                    </tr>
+
+                   
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

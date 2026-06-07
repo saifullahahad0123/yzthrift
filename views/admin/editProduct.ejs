@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Product</title>
+
+    <link
+    rel="stylesheet"
+    href="/css/style.css">
+
+</head>
+
+<body>
+
+<section class="admin-panel">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>Admin Panel</h2>
+
+        <ul>
+
+            <li>
+                <a href="/admin">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/admin/add-product">
+                    Add Product
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="admin-content">
+
+        <h1>Edit Product</h1>
+
+        <div class="add-product-form">
+
+            <form
+
+            action="/products/update/<%= product._id %>"
+
+            method="POST"
+
+            enctype="multipart/form-data"
+
+            >
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label>Name</label>
+
+                    <input
+
+                    type="text"
+
+                    name="name"
+
+                    value="<%= product.name %>"
+
+                    required>
+
+                </div>
+
+                <!-- PRICE -->
+
+                <div class="form-group">
+
+                    <label>Price</label>
+
+                    <input
+
+                    type="number"
+
+                    name="price"
+
+                    value="<%= product.price %>"
+
+                    required>
+
+                </div>
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label>Category</label>
+
+                    <input
+
+                    type="text"
+
+                    name="category"
+
+                    value="<%= product.category %>"
+
+                    required>
+
+                </div>
+
+                <!-- IMAGE -->
+
+                <div class="form-group">
+
+                    <label>New Image</label>
+
+                    <input
+                    type="file"
+                    name="image">
+
+                </div>
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label>Description</label>
+
+                    <textarea
+
+                    rows="6"
+
+                    name="description"
+
+                    required
+
+                    ><%= product.description %></textarea>
+
+                </div>
+
+                <button type="submit">
+
+                    Update Product
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

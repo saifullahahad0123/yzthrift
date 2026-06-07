@@ -1,0 +1,91 @@
+<%- include("partials/header") %>
+
+<section class="checkout-page">
+
+    <h1>Checkout</h1>
+
+    <div class="checkout-container">
+
+        <!-- SHIPPING FORM -->
+
+        <div class="checkout-form">
+
+            <form
+            action="/place-order"
+            method="POST">
+
+                <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="city"
+                    placeholder="City"
+                    required
+                >
+
+                <textarea
+                    name="address"
+                    rows="5"
+                    placeholder="Address"
+                    required
+                ></textarea>
+
+                <button type="submit">
+
+                    Place Order
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="checkout-summary">
+
+            <h2>Order Summary</h2>
+
+            <% cart.forEach(item => { %>
+
+                <div class="summary-item">
+
+                    <span>
+                        <%= item.product.name %>
+                    </span>
+
+                    <span>
+                        x<%= item.quantity %>
+                    </span>
+
+                </div>
+
+            <% }) %>
+
+            <div class="summary-total">
+
+                <h3>Total:</h3>
+
+                <h3> ₹<%= total %></h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<%- include("partials/footer") %>

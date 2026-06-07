@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Search Results</title>
+
+    <link
+    rel="stylesheet"
+    href="/css/style.css">
+
+</head>
+
+<body>
+
+<%- include("partials/header") %>
+
+<section class="featured-products">
+
+    <h2>
+
+        Search Results For:
+        "<%= searchQuery %>"
+
+    </h2>
+
+    <div class="products-grid">
+
+        <% if(products.length > 0){ %>
+
+            <% products.forEach(product => { %>
+
+                <div class="product-card">
+
+                    <img
+
+                    src="/uploads/<%= product.image %>"
+
+                    alt="">
+
+                    <h3>
+
+                        <%= product.name %>
+
+                    </h3>
+
+                    <p>
+
+                        ₹<%= product.price %>
+
+                    </p>
+
+                    <a
+                    href="/products/<%= product._id %>">
+
+                        <button>
+
+                            View Product
+
+                        </button>
+
+                    </a>
+
+                </div>
+
+            <% }) %>
+
+        <% } else { %>
+
+            <h2>
+
+                No Products Found
+
+            </h2>
+
+        <% } %>
+
+    </div>
+
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
+
+</html>

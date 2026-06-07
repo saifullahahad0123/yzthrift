@@ -1,0 +1,62 @@
+<%- include("partials/header") %>
+
+<section class="orders-page">
+
+    <h1>My Orders</h1>
+
+    <% if(orders.length > 0){ %>
+
+        <% orders.forEach(order => { %>
+
+            <div class="order-card">
+
+                <h2>
+                    Order Status:
+                    <%= order.status %>
+                </h2>
+
+                <p>
+                    Total:
+                    $<%= order.totalPrice %>
+                </p>
+
+                <h3>Products</h3>
+
+                <% order.items.forEach(item => { %>
+
+                    <div class="order-item">
+
+                        <img
+                        src="/uploads/<%= item.image %>"
+                        alt="">
+
+                        <div>
+
+                            <p>
+                                <%= item.name %>
+                            </p>
+
+                            <p>
+                                Quantity:
+                                <%= item.quantity %>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                <% }) %>
+
+            </div>
+
+        <% }) %>
+
+    <% } else { %>
+
+        <h2>No Orders Yet</h2>
+
+    <% } %>
+
+</section>
+
+<%- include("partials/footer") %>

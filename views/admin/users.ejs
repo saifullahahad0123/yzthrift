@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Users</title>
+
+    <link
+    rel="stylesheet"
+    href="/css/style.css">
+
+</head>
+
+<body>
+
+<section class="admin-panel">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>Admin Panel</h2>
+
+         <ul>
+
+         <li><a href="/admin">Dashboard</a></li>
+
+            <li><a href="/admin/products">Products</a></li>
+
+            <li><a href="/admin/orders">Orders</a></li>
+
+            <li><a href="/admin/users">Users </a></li>
+
+            <li> <a href="/logout">Logout</a></li>
+
+        </ul>
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="admin-content">
+
+        <h1>All Users</h1>
+
+        <table class="product-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Email</th>
+
+                    <th>Role</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <% users.forEach(user => { %>
+
+                    <tr>
+
+                        <td>
+
+                            <%= user.name %>
+
+                        </td>
+
+                        <td>
+
+                            <%= user.email %>
+
+                        </td>
+
+                        <td>
+
+                            <% if(user.isAdmin){ %>
+
+                                Admin
+
+                            <% } else { %>
+
+                                Customer
+
+                            <% } %>
+
+                        </td>
+
+                    </tr>
+
+                <% }) %>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

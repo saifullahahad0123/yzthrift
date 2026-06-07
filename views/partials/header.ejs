@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sfthriftstore</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+<div class="logo">
+
+    <a href="/">
+
+        <img
+
+        src="/images/sfthriftstore.jpg"
+
+        alt="Logo">
+
+    </a>
+
+</div>
+        <div class="logo">
+            sfthriftstore
+        </div>
+
+        <form
+action="/search"
+method="GET"
+class="search-form">
+
+    <input
+
+    type="text"
+
+    name="query"
+
+    placeholder="Search products...">
+
+    <button type="submit">
+
+        Search
+
+    </button>
+
+</form>
+
+      <ul class="nav-links">
+
+    <li><a href="/">Home</a></li>
+
+    <li><a href="/cart">Cart</a></li>
+
+
+<% if(user && user.isAdmin){ %>
+
+    <li>
+        <a href="/admin">
+            Admin
+        </a>
+    </li>
+
+<% } %>
+
+
+
+
+    <% if(typeof user !== 'undefined ' && user ){ %>
+
+        <li>
+            <a href="/logout">
+                Logout
+            </a>
+        </li>
+
+    <% } else { %>
+
+        <li>
+            <a href="/login">
+                Login
+            </a>
+        </li>
+
+    <% } %>
+
+</ul>
+
+    </nav>

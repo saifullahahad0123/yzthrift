@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+    <title>sfthriftstore</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<%- include("partials/header") %>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Find Unique Vintage Fashion</h1>
+
+        <p>
+            Buy affordable thrift clothes and discover
+            amazing vintage collections.
+        </p>
+
+        <a href="/products" class="shop-btn">
+            Shop Now
+        </a>
+    </div>
+
+</section>
+
+
+<section class="categories">
+
+    <a href="/?category=All">
+
+        <button>
+
+            All
+
+        </button>
+
+    </a>
+
+    <a href="/?category=Men">
+
+        <button>
+
+            Men
+
+        </button>
+
+    </a>
+
+    <a href="/?category=Women">
+
+        <button>
+
+            Women
+
+        </button>
+
+    </a>
+
+    <a href="/?category=Shoes">
+
+        <button>
+
+            Shoes
+
+        </button>
+
+    </a>
+
+    <a href="/?category=Vintage">
+
+        <button>
+
+            Vintage
+
+        </button>
+
+    </a>
+
+</section>
+
+<!-- FEATURED PRODUCTS -->
+
+<section class="featured-products">
+
+    <!-- <h2 class>Featured Products</h2> -->
+
+    <div class="products-grid">
+
+        <% products.forEach(product => { %>
+
+            <div class="product-card">
+
+                <!-- IMAGE -->
+
+                <img
+
+                src="/uploads/<%= product.image %>"
+
+                alt="<%= product.name %>">
+
+                <!-- NAME -->
+
+                <h3>
+
+                    <%= product.name %>
+
+                </h3>
+
+                <!-- PRICE -->
+
+                <p>
+
+                    ₹<%= product.price %>
+
+                </p>
+
+                <!-- BUTTON -->
+
+              
+
+
+                <a href="/products/<%= product._id %>">
+                    <button>
+                            View Product
+                     </button>
+                </a>
+
+                     <a
+    href="/cart/add/<%= product._id %>"
+    class="cart-link"> Add To Cart </a>
+
+                </a>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+</section>
+<%- include("partials/footer") %>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        <%= product.name %>
+
+    </title>
+
+    <link
+    rel="stylesheet"
+    href="/css/style.css">
+
+</head>
+
+<body>
+
+<%- include("partials/header") %>
+
+<section class="product-details">
+
+    <!-- IMAGE -->
+
+    <div class="product-image">
+
+        <img
+
+        src="/uploads/<%= product.image %>"
+
+        alt="<%= product.name %>">
+
+    </div>
+
+    <!-- INFO -->
+
+    <div class="product-info">
+
+        <h1>
+
+            <%= product.name %>
+
+        </h1>
+
+        <h2>
+
+            ₹<%= product.price %>
+
+        </h2>
+
+        <p>
+
+            Category:
+            <%= product.category %>
+
+        </p>
+
+        <p>
+
+            <%= product.description %>
+
+        </p>
+
+        <!-- ADD TO CART -->
+
+        <a
+        href="/cart/add/<%= product._id %>">
+
+            <button>
+
+                Add To Cart
+
+            </button>
+
+        </a>
+
+    </div>
+
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
+
+</html>

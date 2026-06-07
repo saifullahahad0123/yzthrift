@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Orders</title>
+
+    <link
+    rel="stylesheet"
+    href="/css/style.css">
+
+</head>
+
+<body>
+
+<section class="admin-panel">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>Admin Panel</h2>
+
+        <ul>
+
+         <li><a href="/admin">Dashboard</a></li>
+
+            <li><a href="/admin/products">Products</a></li>
+
+            <li><a href="/admin/orders">Orders</a></li>
+
+            <li><a href="/admin/users">Users </a></li>
+
+            <li> <a href="/logout">Logout</a></li>
+
+        </ul>
+
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="admin-content">
+
+        <h1>All Orders</h1>
+
+        <% if(orders.length > 0){ %>
+
+            <% orders.forEach(order => { %>
+
+                <div class="order-card">
+
+                    <h2>
+
+                        Status:
+                        <%= order.status %>
+
+                    </h2>
+
+                    <p>
+
+                        Total:
+                        ₹<%= order.totalPrice %>
+
+                    </p>
+
+                    <p>
+
+                        Customer:
+                        <%= order.shippingAddress.fullName %>
+
+                    </p>
+
+                    <p>Phone:<%= order.shippingAddress.phone %></p>
+
+                    <p>
+
+                        City:
+                        <%= order.shippingAddress.city %>
+
+                    </p>
+
+                    <p>Address:   <%= order.shippingAddress.address %></p>
+
+                    <h3>Products</h3>
+
+                    <% order.items.forEach(item => { %>
+
+                        <div class="order-item">
+
+                            <img
+
+                            src="/uploads/<%= item.image %>"
+
+                            width="80"
+
+                            alt="">
+
+                            <div>
+
+                                <p>
+
+                                    <%= item.name %>
+
+                                </p>
+
+                                <p>
+
+                                    Qty:
+                                    <%= item.quantity %>
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    <% }) %>
+
+                </div>
+
+            <% }) %>
+
+        <% } else { %>
+
+            <h2>No Orders Found</h2>
+
+        <% } %>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>
