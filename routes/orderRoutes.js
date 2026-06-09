@@ -16,12 +16,7 @@ const {
     "../controllers/orderController"
 );
 
-/* CHECKOUT */
 
-// router.get(
-//     "/checkout",
-//     checkoutPage
-// );
 
 router.get(
     "/checkout",

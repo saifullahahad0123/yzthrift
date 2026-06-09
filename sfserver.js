@@ -124,31 +124,7 @@ app.get(
 });
 
 
-// app.get("/", async (req, res) => {
 
-//     try {
-
-//         /* GET PRODUCTS */
-
-//         const products =
-//         await Product.find().limit(8);
-
-//         res.render("index", {
-
-//             user:
-//             req.session.user,
-
-//             products
-//         });
-
-//     } catch (error) {
-
-//         console.log(error);
-//     }
-
-// });
-
-/* SEARCH PRODUCTS */
 
 app.get(
     "/search",
@@ -256,20 +232,7 @@ app.get("/register", (req, res) => {
 });
 
 
-// app.get("/admin", (req, res) => {
-//     res.render("admin/dashboard");
-// });
 
-// app.get(
-//     "/admin",
-//     isAdmin,
-//     (req, res) => {
-
-//     res.render("admin/dashboard", {
-//         user: req.session.user
-//     });
-
-// });
 
 app.get("/admin", isAdmin, async (req, res) => {
 
@@ -314,12 +277,6 @@ app.get("/admin", isAdmin, async (req, res) => {
 
 
 
-// app.get("/admin/add-product", (req, res) => {
-//     res.render("admin/addProduct");
-// });
-
-
-/* ADMIN ORDERS */
 
 app.get(
     "/admin/orders",
@@ -468,11 +425,6 @@ app.get(
 });
 
 
-// const PORT = 3000;
-
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
 
 
 const PORT =

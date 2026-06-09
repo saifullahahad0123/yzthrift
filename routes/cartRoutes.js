@@ -26,12 +26,7 @@ const {
 
 router.get("/", getCart);
 
-/* ADD */
 
-// router.get(
-//     "/add/:id",
-//     addToCart
-// );
 
 router.get(
     "/add/:id",

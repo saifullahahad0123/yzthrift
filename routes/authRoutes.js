@@ -26,12 +26,6 @@ router.post(
     loginUser
 );
 
-/* LOGOUT */
-
-// router.get(
-//     "/logout",
-//     logoutUser
-// );
 
 
 
