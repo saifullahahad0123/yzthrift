@@ -46,7 +46,7 @@ const registerUser = async (req, res) => {
 
         });
 
-        await user.save();
+        
 
         const otp = Math.floor(
     100000 + Math.random() * 900000
