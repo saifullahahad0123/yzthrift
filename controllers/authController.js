@@ -42,10 +42,10 @@ const registerUser = async (req, res) => {
 
             email,
 
-            password: hashedPassword
-
+            password: hashedPassword,
+              isVerified: false
         });
-
+await user.save();
         
 
         const otp = Math.floor(
@@ -103,9 +103,22 @@ const verifyOtp = async (req, res) => {
             req.session.userId
         );
 
+        if(!user){
+
+            return res.send(
+                "User not found"
+            );
+        }
+
         user.isVerified = true;
 
         await user.save();
+
+        /* CLEAR OTP SESSION */
+
+        req.session.otp = null;
+
+        req.session.userId = null;
 
         return res.redirect(
             "/login"
@@ -116,7 +129,6 @@ const verifyOtp = async (req, res) => {
         "Invalid OTP"
     );
 };
-
 /* LOGIN */
 
 const loginUser = async (req, res) => {
@@ -137,6 +149,12 @@ const loginUser = async (req, res) => {
 
             return res.send("User not found");
         }
+        if(!user.isVerified){
+
+    return res.send(
+        "Please verify your email first."
+    );
+}
 
         /* MATCH PASSWORD */
 

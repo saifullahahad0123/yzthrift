@@ -77,9 +77,17 @@ async (req, res) => {
             item.quantity;
         });
 
+const lastOrder = await Order.findOne()
+    .sort({ orderNumber: -1 });
+
+const orderNumber =
+    lastOrder?.orderNumber
+        ? lastOrder.orderNumber + 1
+        : 100;
+
         const newOrder =
         new Order({
-
+   orderNumber: orderNumber,
             user:
             req.session.user.id,
 
@@ -99,7 +107,8 @@ async (req, res) => {
                 item.quantity,
 
                 image:
-                item.product.image
+                item.product.image,
+               
 
             })),
 

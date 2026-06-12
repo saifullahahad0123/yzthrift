@@ -12,14 +12,24 @@
 
         <% orders.forEach(order => { %>
 
+            <h2>
+
+    Order SF
+    <%= order.orderNumber %>
+
+</h2>
             <div class="order-card">
  <p style="color: rgb(226, 31, 31);"> After Shipped order cannot be Cancelled</p>
-                <h2>
+                
+ 
+ <h2>
 
                     Order Status:
                     <%= order.status %>
 
                 </h2>
+
+                
 
                 <p>
 
