@@ -2264,7 +2264,8 @@ form button:hover{
 /* 📱 TABLET */
 @media (max-width: 768px) {
     .classic-search {
-        max-width: 100%;
+        max-width: 300px;
+        min-width: 270px;
     }
 
     .classic-search input {
@@ -2289,6 +2290,7 @@ form button:hover{
     .classic-search {
         padding: 5px;
         border-radius: 14px;
+        
     }
 
     .classic-search input {
