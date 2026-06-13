@@ -9,108 +9,115 @@
 </head>
 <body>
 
-    <nav class="navbar">
 
-    <!-- LOGO -->
-    <div class="logo">
+<nav class="sf-navbar">
+
+    <div class="sf-logo">
+
         <a href="/">
             <img src="/images/sfthriftstore.jpg" alt="Logo">
         </a>
-        <span style="font-size:x-large;">sfthriftstore</span>
+
+        <div class="sf-brand">
+            <h2>SF THRIFT STORE</h2>
+            <span>Premium Thrift Fashion</span>
+        </div>
+
     </div>
-   
 
-    <form action="/search" method="GET" class="classic-search">
+    <form action="/search" method="GET" class="sf-search">
 
-    <input
+        <input
         type="text"
         name="query"
         placeholder="Search products..."
-        required
-    >
+        required>
 
-   <button type="submit" class="img-btn">
-    🔍
-</button>
+        <button type="submit">
+            Search
+        </button>
 
-</form>
+    </form>
 
-    <div class="menu-toggle" onclick="toggleMenu(this)">
-    ☰
-</div>
+    <div class="sf-menu-toggle" onclick="toggleMenu(this)">
+        ☰
+    </div>
 
-    <!-- LINKS -->
-    <ul class="nav-links" id="nav-links">
+    <ul class="sf-nav-links" id="sf-nav-links">
 
         <li><a href="/">Home</a></li>
-       <li> <a href="/products">Shop</a></li> 
-        <li><a href="/orders">Orders</a></li>
-        <li><a href="/cart">Cart</a></li>
-        <li><a href="/contact"> Contact</a></li>
 
-   
+        <li><a href="/products">Shop</a></li>
+
+        <li><a href="/orders">Orders</a></li>
+
+        <li><a href="/cart">Cart</a></li>
+
+        <li><a href="/contact">Contact</a></li>
 
         <% if(user?.isAdmin){ %>
             <li><a href="/admin">Admin</a></li>
         <% } %>
 
-       
-
         <% if(user){ %>
 
-<li class="profile">
+        <li class="sf-profile">
 
-    <a href="#" onclick="toggleProfile(event)">
-        HELLO <%= user.name.toUpperCase() %>
-    </a>
+            <a href="#" onclick="toggleProfile(event)">
+                👤 <%= user.name.toUpperCase() %>
+            </a>
 
-    <ul class="dropdown" id="profileMenu">
+            <ul class="sf-dropdown" id="sfProfileMenu">
 
-        <li><a href="/orders">My Orders</a></li>
+                <li><a href="/orders">My Orders</a></li>
 
-        <% if(user.isAdmin){ %>
-            <li><a href="/admin">Admin Panel</a></li>
+                <% if(user.isAdmin){ %>
+                    <li><a href="/admin">Admin Panel</a></li>
+                <% } %>
+
+                <li><a href="/logout">Logout</a></li>
+
+            </ul>
+
+        </li>
+
+        <% } else { %>
+
+        <li>
+            <a class="sf-login-btn" href="/login">
+                Login
+            </a>
+        </li>
+
         <% } %>
-
-        <li><a href="/logout">Logout</a></li>
-
-    </ul>
-
-</li>
-
-<% } else { %>
-
-<li><a href="/login">Login</a></li>
-
-<% } %>
 
     </ul>
 
 </nav>
 
+
 <script>
+function toggleMenu(btn){
 
-function toggleMenu(btn) {
-
-    const menu = document.getElementById("nav-links");
+    const menu =
+    document.getElementById("sf-nav-links");
 
     menu.classList.toggle("active");
 
-    btn.classList.toggle("open");
-
-    btn.innerHTML = menu.classList.contains("active")
-        ? "✖"
-        : "☰";
+    btn.innerHTML =
+    menu.classList.contains("active")
+    ? "✖"
+    : "☰";
 }
 
-/* PROFILE DROPDOWN */
 function toggleProfile(e){
 
     e.preventDefault();
 
-    document.getElementById("profileMenu")
+    document
+    .getElementById("sfProfileMenu")
     .classList.toggle("show");
 }
-
 </script>
 </body>
+</html>

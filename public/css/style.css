@@ -75,6 +75,10 @@ body{
     background: darkred;
 }
 
+
+
+
+
 /* FEATURED PRODUCTS */
 
 .featured{
@@ -1347,19 +1351,13 @@ table img{
 }
 
 
-
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
 @media(max-width: 768px){
 
-    /* NAVBAR */
+    
 
     nav{
 
-        flex-direction: column;
+        /* flex-direction: column; */
 
         gap: 15px;
 
@@ -1377,7 +1375,7 @@ table img{
         gap: 10px;
     }
 
-    /* HERO */
+  
 
     .hero{
 
@@ -1493,7 +1491,7 @@ table img{
     textarea,
     button{
 
-        width: 100%;
+        /* width: 100%; */
         margin-top: 4px;
     }
 
@@ -2047,7 +2045,7 @@ form button:hover{
 
     form button{
 
-        margin-top: 10px;
+        /* margin-top: 10px; */
 
         margin-left: 0;
     }
@@ -2060,255 +2058,7 @@ form button:hover{
     }
 }
 
-/* ================= NAVBAR ================= */
 
-.navbar{
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: black;
-    padding: 10px 20px;
-}
-
-/* LOGO */
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: white;
-}
-
-.logo img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-/* LINKS */
-.nav-links{
-    display: flex;
-    list-style: none;
-    gap: 18px;
-    font-size: larger;
-}
-
-.nav-links li a{
-    color: white;
-    text-decoration: none;
-}
-
-.nav-links li a:hover{
-    color: orange;
-}
-
-/* HAMBURGER */
-.menu-toggle{
-    display: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-}
-
-/* MOBILE */
-@media(max-width: 768px){
-
-    .menu-toggle{
-        display: block;
-    }
-
-    .nav-links{
-        position: absolute;
-        top: 60px;
-        left: 0;
-
-        width: 100%;
-        background: black;
-
-        flex-direction: column;
-        display: none;
-        padding: 10px 0;
-    }
-
-    .nav-links.active{
-        display: flex;
-    }
-
-    .nav-links li{
-        padding: 4px;
-        text-align: center;
-        font-size: large;
-    }
-}
-
-/* CART BADGE */
-.nav-links li a{
-    position: relative;
-}
-
-/* PROFILE DROPDOWN */
-.profile{
-    position: relative;
-}
-
-.dropdown{
-    position: absolute;
-    top: 30px;
-    right: 0;
-
-    background: white;
-    list-style: none;
-
-    padding: 10px;
-    display: none;
-
-    border-radius: 8px;
-}
-
-.dropdown li a{
-    color: black;
-    display: block;
-    padding: 8px;
-}
-
-.dropdown.show{
-    display: block;
-}
-
-/* HAMBURGER ANIMATION */
-.menu-toggle{
-    transition: 0.3s;
-}
-
-.menu-toggle.open{
-    transform: rotate(180deg);
-}
-
-/* MAIN SEARCH BAR */
-.classic-search {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    width: 50%;
-    max-width: 300px;
-     margin-top: 9px;
-    padding: 5px;
-    border-radius: 50px;
-
-    background: #fff;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-
-    transition: all 0.3s ease;
-}
-
-/* INPUT */
-.classic-search input {
-    flex: 1;
-    border: none;
-    outline: none;
-
-    padding: 12px 14px;
-    font-size: 15px;
-
-    border-radius: 50px;
-    min-width: 0; /* important for mobile shrinking */
-}
-
-/* BUTTON */
-.img-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 44px;
-    height: 44px;
-
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-
-    background: linear-gradient(135deg, #ff8a00, #ff3c78);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-
-    transition: all 0.3s ease;
-    flex-shrink: 0; /* prevents shrinking */
-}
-
-/* IMAGE */
-.img-btn img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-}
-
-/* HOVER EFFECT */
-.img-btn:hover {
-    transform: scale(1.08);
-}
-
-/* CLICK EFFECT */
-.img-btn:active {
-    transform: scale(0.95);
-}
-
-/* FOCUS EFFECT ON WHOLE SEARCH BAR */
-.classic-search:focus-within {
-    box-shadow: 0 8px 25px rgba(255, 60, 120, 0.25);
-}
-
-/* 📱 TABLET */
-@media (max-width: 768px) {
-    .classic-search {
-        max-width: 300px;
-        min-width: 270px;
-    }
-
-    .classic-search input {
-        font-size: 14px;
-        padding: 10px 12px;
-    }
-
-    .img-btn {
-        width: 40px;
-        height: 40px;
-        margin-top: 2px;
-    }
-
-    .img-btn img {
-        width: 30px;
-        height: 30px;
-    }
-}
-
-/* 📱 MOBILE */
-@media (max-width: 480px) {
-    .classic-search {
-        padding: 5px;
-        border-radius: 14px;
-        
-    }
-
-    .classic-search input {
-        font-size: 13px;
-        padding: 5px;
-    }
-
-    .img-btn {
-        width: 36px;
-        height: 36px;
-    }
-
-    .img-btn img {
-        width: 24px;
-        height: 24px;
-    }
-}
-/* OTP PAGE */
 
 .otp-container{
 
@@ -2406,70 +2156,359 @@ form button:hover{
     font-size: 18px;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.reset-container{
-    min-height: 100vh;
+/* ==================================
+   SF THRIFT STORE PROFESSIONAL NAVBAR
+================================== */
+
+.sf-navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #141e30, #243b55);
+
+    padding: 15px 40px;
+
+    background: #111;
+    color: #fff;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
 }
 
-.reset-form{
+/* LOGO */
+
+.sf-logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sf-logo img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid  #25c05b;
+}
+
+.sf-brand{
+    display: flex;
+    flex-direction: column;
+}
+
+.sf-brand h2{
+    font-size: 22px;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.sf-brand span{
+    font-size: 12px;
+    color: #bdbdbd;
+    letter-spacing: 1px;
+}
+
+/* SEARCH */
+
+.sf-search{
+    display: flex;
     width: 380px;
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 100%;
 }
 
-.reset-title{
-    text-align: center;
-    color: #243b55;
-    margin-bottom: 25px;
-    font-size: 28px;
-}
-
-.reset-input{
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-
-.reset-input:focus{
-    border-color: #243b55;
-    box-shadow: 0 0 5px rgba(36,59,85,0.3);
-}
-
-.reset-btn{
-    width: 100%;
-    padding: 12px;
-    background: #243b55;
-    color: white;
+.sf-search input{
+    flex: 1;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    outline: none;
+
+    padding: 12px 15px;
+
+    border-radius: 8px 0 0 8px;
+
+    font-size: 14px;
+}
+
+.sf-search button{
+    border: none;
+
+    padding: 12px 18px;
+
+    background: #25c05b;
+
+    color: #111;
+
+    font-weight: bold;
+
     cursor: pointer;
+
+    border-radius: 0 8px 8px 0;
+
     transition: 0.3s;
 }
 
-.reset-btn:hover{
-    background: #141e30;
+.sf-search button:hover{
+    background: #25c05b;
 }
 
-@media (max-width: 480px){
-    .reset-form{
-        width: 90%;
-        padding: 30px;
+/* NAVIGATION */
+
+.sf-nav-links{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.sf-nav-links li{
+    position: relative;
+}
+
+.sf-nav-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.sf-nav-links a:hover{
+    color: #25c05b;
+}
+
+/* LOGIN BUTTON */
+
+.sf-login-btn{
+    background: #25c05b;
+    color: #111 !important;
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+}
+
+.sf-login-btn:hover{
+    background: #25c05b;
+    color: #111 !important;
+}
+
+/* PROFILE */
+
+.sf-profile{
+    position: relative;
+}
+
+/* DROPDOWN */
+
+.sf-dropdown{
+    position: absolute;
+
+    top: 45px;
+    right: 0;
+
+    background: #fff;
+
+    min-width: 190px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+    list-style: none;
+
+    display: none;
+
+    overflow: hidden;
+}
+
+.sf-dropdown.show{
+    display: block;
+}
+
+.sf-dropdown li{
+    width: 100%;
+}
+
+.sf-dropdown a{
+    display: block;
+
+    color: #111;
+
+    padding: 12px 15px;
+
+    transition: 0.3s;
+}
+
+.sf-dropdown a:hover{
+    background: #f5f5f5;
+    color: #111;
+}
+
+/* MOBILE MENU ICON */
+
+.sf-menu-toggle{
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media(max-width: 992px){
+
+    .sf-navbar{
+        padding: 15px 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .sf-search{
+        width: 280px;
+    }
+
+    .sf-brand h2{
+        font-size: 18px;
     }
 }
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width: 768px){
+
+    .sf-navbar{
+        position: relative;
+        padding: 15px;
+    }
+
+    .sf-menu-toggle{
+        display: block;
+        margin-left: auto;
+    }
+
+    .sf-search{
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .sf-nav-links{
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #111;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        overflow: hidden;
+
+        max-height: 0;
+
+        transition: 0.4s ease;
+    }
+
+    .sf-nav-links.active{
+        max-height: 700px;
+        padding: 10px 0;
+    }
+
+    .sf-nav-links li{
+        width: 100%;
+    }
+
+    .sf-nav-links a{
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .sf-nav-links a:hover{
+        background: #222;
+    }
+
+    .sf-dropdown{
+        position: static;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        background: #1a1a1a;
+    }
+
+    .sf-dropdown a{
+        color: white;
+        padding-left: 40px;
+    }
+
+    .sf-dropdown a:hover{
+        background: #333;
+        color: white;
+    }
+
+    .sf-logo img{
+        width: 45px;
+        height: 45px;
+    }
+
+    .sf-brand h2{
+        font-size: 16px;
+    }
+
+    .sf-brand span{
+        font-size: 11px;
+    }
+}
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media(max-width: 480px){
+
+    .sf-navbar{
+        padding: 12px;
+    }
+
+    .sf-logo img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .sf-brand h2{
+        font-size: 14px;
+    }
+
+    .sf-brand span{
+        display: none;
+    }
+
+    .sf-search input{
+        font-size: 14px;
+    }
+
+    .sf-search button{
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+
+
+
