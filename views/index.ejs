@@ -21,6 +21,30 @@
 
 </section>
 
+<% if(mysteryBoxes && mysteryBoxes.length > 0){ %>
+
+<section class="mystery-home">
+
+    <h2>🎁 Mystery Box</h2>
+
+    <p>
+        Surprise thrift items at special prices.
+    </p>
+
+    <a href="/?category=Mystery Box">
+
+        <button>
+
+            Shop Mystery Box
+
+        </button>
+
+    </a>
+
+</section>
+
+<% } %>
+
 
 <section class="categories">
 
@@ -73,6 +97,7 @@
         </button>
 
     </a>
+   
 
 </section>
 
@@ -127,7 +152,7 @@
     href="/cart/add/<%= product._id %>"
     class="cart-link"> Add To Cart </a>
 
-                </a>
+               
 
             </div>
 

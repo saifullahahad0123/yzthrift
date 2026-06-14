@@ -86,12 +86,19 @@ app.get("/", async (req, res) => {
 
         }
 
+        const mysteryBoxes =
+await Product.find({
+
+    category: "Mystery Box"
+});
+
         res.render("index", {
 
             user:
             req.session.user,
 
             products,
+             mysteryBoxes,
 
             selectedCategory:
             category || "All"
