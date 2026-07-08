@@ -408,7 +408,7 @@ Your order status has been updated.
 New Status:
 ${order.status}
 
-Thank you for shopping with SF Thrift Store.
+Thank you for shopping with YZ Thrift .
 `
         );
 

@@ -59,7 +59,7 @@ await sendEmail(
 
     user.email,
 
-    "Verify Your Email Address – SF Thrift Store",
+    "Verify Your Email Address – YZ Thrift ",
 
 `Hello ${user.name},
 
@@ -73,11 +73,11 @@ This OTP is valid for 10 minutes.
 
 For your security, please do not share this code with anyone.
 
-If you did not create an account with SF Thrift Store, please ignore this email.
+If you did not create an account with YZ Thrift , please ignore this email.
 
 Thank you,
 
-SF Thrift Store Team`
+YZ Thrift  Team`
 );
 
 res.redirect("/verify-otp");
