@@ -63,7 +63,7 @@ await sendEmail(
 
 `Hello ${user.name},
 
-Thank you for creating an account with SF Thrift Store.
+Thank you for creating an account with YZ Thrift .
 
 To complete your registration and verify your email address, please use the One-Time Password (OTP) below:
 

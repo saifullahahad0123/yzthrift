@@ -18,7 +18,7 @@ const sendEmail = async (to, subject, text) => {
         await apiInstance.sendTransacEmail({
             sender: {
                 email: process.env.SENDER_EMAIL,
-                name: "SF Thrift Store"
+                name: "YZ THRIFT"
             },
             to: [{ email: to }],
             subject,
